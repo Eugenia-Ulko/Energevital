@@ -120,8 +120,17 @@ export default function App() {
         <SectionTitle>{title}</SectionTitle>
       )}
     />
-    <PlusButton>
-    <Ionicons name="ios-add" size={36} color="white" />
+    <PlusButton style={{
+      shadowColor: '#2A86FF',
+      shadowOffset: {
+    	width: 0,
+	    height: 4,
+    },
+      shadowOpacity: 0.7,
+      shadowRadius: 3.46,
+      elevation: 5}}
+>
+    <Ionicons name="ios-add" size={39} color="white" />
     </PlusButton>
     </Container>
   );
