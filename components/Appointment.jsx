@@ -2,31 +2,23 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import styled from 'styled-components/native'
 
-const Group = ({ title, items }) => {
-  return (
-  <GroupBlock>
-        <GroupTitle>
-          {title}
-        </GroupTitle>
-
-        {items.map((item, index) => <GroupItem key={index}>
+const Group = ({ user, diagnosis, active, time }) => {
+  return (     
+        <GroupItem>
           <Avatar source={{
-            uri: item.user.avatar
+            uri: user.avatar
             }} 
             />
             <View style={{ flex: 1 }}>
-            <FullName>{item.user.fullname}</FullName>
+            <FullName>{user.fullname}</FullName>
             <GreyText>
-             {item.diagnosis}
+             {diagnosis}
             </GreyText>
             </View>
-            <GroupDate active={item.active}>
-              {item.time}
+            <GroupDate active={active}>
+              {time}
             </GroupDate>
         </GroupItem>
-        )}
-
-      </GroupBlock>
   )
 }
 
@@ -67,20 +59,10 @@ const Avatar = styled.Image`
 const GroupItem = styled.TouchableOpacity`
   align-items: center;
   flex-direction: row;
-  padding: 20px 0;
+  padding: 20px;
   border-bottom-width: 1px;
   border-bottom-color: #F3F3F3;
 `;
 
-const GroupTitle = styled.Text`
-  font-weight: 900;
-  font-size: 25px;
-  color: #000000;
-`;
-
-const GroupBlock = styled.View`
-  padding: 0 20px;
-  margin-bottom: 26px;
-`;
 
 export default Group;
