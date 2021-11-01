@@ -20,7 +20,7 @@ const Group = ({ title, items }) => {
              {item.diagnosis}
             </GreyText>
             </View>
-            <GroupDate active>
+            <GroupDate active={item.active}>
               {item.time}
             </GroupDate>
         </GroupItem>
@@ -80,6 +80,7 @@ const GroupTitle = styled.Text`
 
 const GroupBlock = styled.View`
   padding: 0 20px;
+  margin-bottom: 26px;
 `;
 
 export default Group;
